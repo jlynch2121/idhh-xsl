@@ -7,12 +7,7 @@
   xmlns:dcterms="http://purl.org/dc/terms/" xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/"
   xmlns:oaiProvenance="http://www.openarchives.org/OAI/2.0/provenance">
 
-  <!--
-      Created JCG 
-      This transformation is for all collections from University of Illinois at Urbana-Champaign.
-    -->
-
-  <!-- 
+   <!-- 
        This section is the Identity transform that generates a document equal to the input document.
 	-->
 
@@ -27,9 +22,9 @@
   </xsl:template>
   
   <!-- 
-    Note: use a combination of the substring() and string-length() methods to test for weird ending characters, if this is necessary. For instance, to create a
-    new variable with the ending semicolon or comma stripped off, use the following:
-    <xsl:variable name="strippedTypeValue" select="substring($typeValue, 1, string-length(.) - 1)"/>
+    This code matches to each dc:type field in record, normalizes delimiters to semicolons
+    It then tokenizes delimited values, passing each token to a template that will try to match it to a DCMI Type
+    It will simply pass a non-delimited value to the template that will attempt to match it to a DCMI Type
   -->
   <xsl:template match="dc:type">
     <xsl:variable name="typeValue" select="normalize-space(replace(., ',', ';'))"/>
@@ -52,16 +47,20 @@
   </xsl:template>
   
     <!-- 
-      Need to think of a way to eliminate duplicate field/value pairs, which will often be produced by the current code. For example, if a field contains 'text; newspaper,'
-      This will create two fields, each containing 'Text'.
+      Need to think of a way to eliminate duplicate field/value pairs, which will often be produced by the current code. 
+      For example, if a field contains 'text; newspaper', this will create two fields, each containing 'Text'.
     -->
   <xsl:template name="dcmiTypeVocab">
     <xsl:param name="rawType"/>
     <xsl:variable name="apos">'</xsl:variable>
     <xsl:choose>
-      <!-- Not sure if we should keep emptying fields of these values or transform them. If type fields containing this data are normally extra type fields for 
-      file format metadata, then transforms will likely often result in duplicate values. Need to figure out if there is a significant number of the values this 
-      is designed to catch and understand how they appear, esp. either alone or together. Try looking for blank values in JSON. -->
+    <!-- 
+      Not sure if we should keep emptying fields of these values as MJ has been doing before or transform them. 
+      If type fields containing this data are normally extra type fields for file format metadata, then transforms 
+      will likely often result in duplicate values. Need to figure out if there is a significant number of the values 
+      this is designed to catch and understand how they appear, esp. either alone or together. Try looking for 
+      blank values in JSON.
+    -->
       <xsl:when test="contains(lower-case($rawType), 'pdf') or
         contains(lower-case($rawType), 'jp') or
         contains(lower-case($rawType), 'tiff') or
@@ -139,35 +138,4 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
-  <!--
-         This section replaces specific strings found in the dc:format field with nothing to meet 
-         DPLA requirements.  MJH 1April2016
-         Added dc:type and dc:medium with more strings. MJH May2016
-         
-         What we want to do is, as I understand, is match to a correct DCMI type. JDL 2018-10-29
-    -->
- <!--
-   
-  <xsl:template
-    match="dc:type/text()[. = 'pdf'] | dc:type/text()[. = '.pdf'] | dc:type/text()[. = 'image/jpeg'] | dc:type/text()[. = 'image/jpg'] | 
-    dc:type/text()[. = 'tiff'] | dc:type/text()[. = 'TIFF'] | dc:type/text()[. = 'tif'] | dc:type/text()[. = 'jp2'] | dc:type/text()[. = 'JP2'] | 
-    dc:type/text()[. = 'image/jp2'] | dc:type/text()[. = 'Image/JP2'] | dc:type/text()[. = 'Image/JP2000'] | dc:type/text()[. = 'JP2000'] | 
-    dc:type/text()[. = 'Image/PDF'] | dc:type/text()[. = 'Image/TIFF'] | dc:type/text()[. = 'cpd'] | dc:type/text()[. = 'image pdf'] | 
-    dc:type/text()[. = 'N/A'] | dc:type/text()[. = 'NA'] | dc:type/text()[. = 'GIF'] | dc:type/text()[. = 'image.jpg'] | 
-    dc:type/text()[. = 'Text/PDF'] | dc:type/text()[. = 'TEXT/PDF'] | dc:type/text()[. = 'Image/tiff'] | dc:type/text()[. = 'Image/Tiff']"> </xsl:template>
-    
--->
-  
-  
-
-<!-- 
-  This is the hardest core template which deletes the text node for anything that's not a DCMI Type-conforming value.
-  -->
-<!--
-  <xsl:template
-    match="dc:type/text()[not(.='Moving Image') and not(.='Image') and not(.='Sound') and not(.='Text') and not(.='Physical Object')]">
-  </xsl:template>
--->
-  
 </xsl:stylesheet>
