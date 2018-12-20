@@ -80,17 +80,25 @@
         contains(lower-case($rawType), 'map') or 
         lower-case($rawType) = concat('children', $apos, 's art') or 
         $rawType = 'image' or
-        contains(lower-case($rawType), 'postcard') or 
+        contains(lower-case($rawType), 'postcard') or
         contains(lower-case($rawType), 'engraving') or
+        contains(lower-case($rawType), 'book plate') or
         contains(lower-case($rawType), 'lithograph') or
         contains(lower-case($rawType), 'etching') or
         contains(lower-case($rawType), 'print') or
+        contains(lower-case($rawType), 'book label') or
         contains(lower-case($rawType), 'portrait') or
         contains(lower-case($rawType), 'drawing') or
         contains(lower-case($rawType), 'tint') or
         contains(lower-case($rawType), 'poster') or
         contains(lower-case($rawType), 'sketch') or
-        contains(lower-case($rawType), 'visual')">
+        contains(lower-case($rawType), 'visual') or
+        contains(lower-case($rawType), 'clipping') or
+        contains(lower-case($rawType), 'plan') or
+        contains(lower-case($rawType), 'elevation') or
+        contains(lower-case($rawType), 'book stamp') or
+        contains(lower-case($rawType), 'woodcut') or
+        contains(lower-case($rawType), 'broadside')">
         <xsl:element name="dc:type">
           <xsl:text>Image</xsl:text>
         </xsl:element>
