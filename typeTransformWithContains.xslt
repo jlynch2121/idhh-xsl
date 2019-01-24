@@ -74,7 +74,7 @@
         contains(lower-case($rawType), 'm4v')">
       </xsl:when>
       <xsl:when test="contains(lower-case($rawType), 'still') or
-        contains(lower-case($rawType), 'photo') or
+        contains(lower-case($rawType), 'photograph') or
         contains(lower-case($rawType), 'map') or
         lower-case($rawType) = concat('children', $apos, 's art') or
         $rawType = 'image' or
