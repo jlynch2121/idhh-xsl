@@ -96,7 +96,8 @@
         contains(lower-case($rawType), 'elevation') or
         contains(lower-case($rawType), 'book stamp') or
         contains(lower-case($rawType), 'woodcut') or
-        contains(lower-case($rawType), 'broadside')">
+        contains(lower-case($rawType), 'broadside') or
+        contains(lower-case($rawType), 'painting')">
         <xsl:element name="dc:type">
           <xsl:text>Image</xsl:text>
         </xsl:element>
