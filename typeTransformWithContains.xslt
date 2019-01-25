@@ -48,7 +48,8 @@
 
     <!--
       Need to think of a way to eliminate duplicate field/value pairs, which will often be produced by the current code.
-      For example, if a field contains 'text; newspaper', this will create two fields, each containing 'Text'.
+      For example, if a field contains 'text; newspaper', this will create two fields, each containing 'Text'. Update
+      2018-12-20: Michael Della Bitta: the DPLA ingestion can "de-duplicate values for a specific field".
     -->
   <xsl:template name="dcmiTypeVocab">
     <xsl:param name="rawType"/>
