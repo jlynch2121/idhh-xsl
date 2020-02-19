@@ -599,9 +599,7 @@
     </xsl:choose>
   </xsl:template>
   
-  <!-- 
-      Template for normalizing type matches raw type data with a DCMI Type value
-  -->
+  <!-- Attempts to match raw type data with a DCMI Type value -->
   <xsl:template name="dcmiTypeVocab">
     <xsl:param name="rawType"/>
     <xsl:variable name="lowercaseType" select="lower-case($rawType)"/>
