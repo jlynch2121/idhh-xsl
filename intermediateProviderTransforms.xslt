@@ -15,6 +15,7 @@
   </xsl:template>
   
   <!-- 
+    Original provider field transforms were created by Jessica Gibson
     Creates the dcterms field for provider for CARLI collections
     Creates edm field for the Intermediate Provider for CARLI. 
   -->
