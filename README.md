@@ -1,5 +1,5 @@
 # idhh-xsl
-XSL code for transforming XML records harvested by the (Illinois Digital Heritage Hub)[https://idhh.dp.la], the (Digital Public Library of America)[https://dp.la] service hub for Illinois. Various templates perform the following operations on XML:
+XSL code for transforming XML records harvested by the [Illinois Digital Heritage Hub](https://idhh.dp.la), the [Digital Public Library of America](https://dp.la) service hub for Illinois. Various templates perform the following operations on XML:
 
 - Normalizes delimiters (e.g., replacing commas [','] with semicolons [';'])
 - Creates EDM field for Intermediate Provider
