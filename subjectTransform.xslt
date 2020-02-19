@@ -17,7 +17,7 @@
   <!-- 
     Template for splitting coordinated subject values using recursive nested replace methods on values containing double dashes
     Does not replace an exhaustive list of delimiters
-    Will be applied only to CPL, ISU, and DePaul and only catches delimiters specific to these institutions' subject metadata
+    Will be applied only to CPL, UIUC, ISU, and DePaul and only catches delimiters specific to these institutions' subject metadata
   -->
   <xsl:template match="dc:subject">
     <xsl:element name="dc:subject">
