@@ -14,7 +14,10 @@
     <xsl:copy><xsl:apply-templates select="node() | @*"/></xsl:copy>
   </xsl:template>
   
-  <!-- Creates the edm field for standardized rights for NIU's CC licenses. -->
+  <!-- 
+     Creates the edm field for standardized rights for NIU's CC licenses.
+     Original standardized rights transform for rightsstatements.org URIs created by Jessica Gibson. 
+  -->
   <xsl:template match="dc:rights">
     <xsl:variable name="s" select="normalize-space(.)"/>
     <xsl:analyze-string select="$s"
