@@ -64,7 +64,7 @@
   
   <!-- 
     Template for normalizing language
-    Removes special characters (currently removes question mark ['?']
+    Removes special characters (currently removes question mark ['?'])
     Deletes some commonly occurring invalid language values
     Attempts to match raw string with special characters removed to ISO 639 language names
    -->
