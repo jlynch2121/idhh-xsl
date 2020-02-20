@@ -12,7 +12,7 @@ xmlns:oaiProvenance="http://www.openarchives.org/OAI/2.0/provenance">
   
   <!-- 
      This section is the Identity transform that generates a document equal to the input document.
-     It also "removes" any records from the feed that contain dc:relation with the text notdpla 
+     Does not copy record nodes from the feed that contain dc:relation with the text, 'notdpla' 
   -->
   <xsl:template match="node()|@*">
     <xsl:if test="not(./dc:relation='notdpla')">
