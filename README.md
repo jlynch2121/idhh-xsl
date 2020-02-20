@@ -1,5 +1,5 @@
 # idhh-xsl
-XSL code for transforming XML records harvested by the [Illinois Digital Heritage Hub](https://idhh.dp.la), the [Digital Public Library of America](https://dp.la) service hub for Illinois. Various templates perform the following operations on XML:
+XSL code for transforming OAI DCMI Terms (Qualified Dublic Core) XML records harvested by the [Illinois Digital Heritage Hub](https://idhh.dp.la), the [Digital Public Library of America](https://dp.la) service hub for Illinois. Various templates perform the following operations on XML:
 
 - Removes records flagged for exclusion from the DPLA and IDHH datasets
 - Normalizes delimiters (e.g., replacing commas [','] with semicolons [';'])
