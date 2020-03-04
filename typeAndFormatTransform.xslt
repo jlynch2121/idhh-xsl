@@ -120,6 +120,7 @@
         $lowercase = 'tif' or
         $lowercase = 'image/tif' or
         contains($lowercase, 'tagged image') or
+        contains($lowercase, 'mpeg') or
         contains($lowercase, 'cpd') or
         $lowercase = 'n/a' or
         $lowercase = 'na' or
@@ -129,7 +130,7 @@
         contains($lowercase, 'm4v') or
         contains($lowercase, 'wav') or
         contains($lowercase, 'boys in blue logan') or
-        $lowercase = 'Ill.' or
+        $lowercase = 'ill.' or
         contains($lowercase, 'book viewer') or
         contains($lowercase, '8 bit') or
         contains($lowercase, 'scan') or
