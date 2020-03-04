@@ -14,8 +14,13 @@
     <xsl:copy><xsl:apply-templates select="node() | @*"/></xsl:copy>
   </xsl:template>
   
-  <!-- Creates the edm field for the Intermediate Provider for IDA. -->
-  <xsl:template match="dcterms:provenance">
+  <!-- 
+    Works on only the first instance of the dcterms:provenance field
+    Removes URLs from provider values
+    Capitalizes proper nouns in provider names
+    Creates the edm field for the Intermediate Provider for IDA. 
+  -->
+  <xsl:template match="dcterms:provenance[1]">
     <xsl:variable name="lcProv" select="lower-case(.)"/>
     <xsl:variable name="remUrl">
       <xsl:choose>
@@ -84,5 +89,8 @@
     </xsl:element>
     <edm:hasMet xmlns:edm="http://www.europeana.eu/schemas/edm/">Illinois Digital Archives</edm:hasMet>
   </xsl:template>
+  
+  <!-- Removes rest of record's provenance values, if multiple are present -->
+  <xsl:template match="dcterms:provenance[position()>1]"/>
   
 </xsl:stylesheet>
