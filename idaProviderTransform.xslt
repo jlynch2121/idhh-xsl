@@ -82,9 +82,6 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:element>
-    <!--<xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>-->
     <edm:hasMet xmlns:edm="http://www.europeana.eu/schemas/edm/">Illinois Digital Archives</edm:hasMet>
   </xsl:template>
   
