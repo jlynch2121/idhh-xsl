@@ -619,6 +619,7 @@
           contains($lowercaseType, 'etching') or
           contains($lowercaseType, 'print') or
           contains($lowercaseType, 'book label') or
+          contains($lowercaseType, 'cartographic') or
           contains($lowercaseType, 'portrait') or
           contains($lowercaseType, 'drawing') or
           contains($lowercaseType, 'tint') or
@@ -628,9 +629,11 @@
           contains($lowercaseType, 'clipping') or
           contains($lowercaseType, 'plan') or
           contains($lowercaseType, 'elevation') or
+          contains($lowercaseType, 'negative') or
           contains($lowercaseType, 'book stamp') or
           contains($lowercaseType, 'woodcut') or
           contains($lowercaseType, 'broadside') or
+          contains($lowercaseType, 'slide') or
           contains($lowercaseType, 'painting')">
           <xsl:text>Image</xsl:text>
         </xsl:when>
@@ -646,6 +649,8 @@
           contains($lowercaseType, ' book') or
           contains($lowercaseType, 'yearbook') or
           $lowercaseType = 'book' or
+          contains($lowercaseType, 'notated music') or
+          contains($lowercaseType, 'periodical') or
           contains($lowercaseType, 'bill')">
           <xsl:text>Text</xsl:text>
         </xsl:when>
