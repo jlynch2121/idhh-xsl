@@ -84,7 +84,8 @@
         $lowercaseLang = 'en-english' or
         contains($lowercaseLang, '/eng') or
         $lowercaseLang = 'englsih' or
-        contains($lowercaseLang, 'eng-us')">
+        contains($lowercaseLang, 'eng-us') or
+        contains($lowercaseLang, 'en-us')">
         <xsl:element name="dc:language">
           <xsl:text>English</xsl:text>
         </xsl:element>
@@ -103,7 +104,8 @@
         </xsl:element>
       </xsl:when>
       <xsl:when test="$lowercaseLang = 'ger' or
-        $lowercaseLang = 'de'">
+        $lowercaseLang = 'de' or
+        $lowercaseLang = 'deu'">
         <xsl:element name="dc:language">
           <xsl:text>German</xsl:text>
         </xsl:element>
@@ -131,6 +133,12 @@
         $lowercaseLang = 'it'">
         <xsl:element name="dc:language">
           <xsl:text>Italian</xsl:text>
+        </xsl:element>
+      </xsl:when>
+      <xsl:when test="$lowercaseLang = 'nor' or
+        $lowercaseLang = 'no'">
+        <xsl:element name="dc:language">
+          <xsl:text>Norwegian</xsl:text>
         </xsl:element>
       </xsl:when>
       <xsl:when test="$lowercaseLang = 'chi' or
@@ -181,10 +189,17 @@
           <xsl:text>Arabic</xsl:text>
         </xsl:element>
       </xsl:when>
+      <xsl:when test="$lowercaseLang = 'yid' or
+        $lowercaseLang = 'yi'">
+        <xsl:element name="dc:language">
+          <xsl:text>Yiddish</xsl:text>
+        </xsl:element>
+      </xsl:when>
       <xsl:when test="(contains($lowercaseLang, 'greek') and 
         contains($lowercaseLang, 'modern')) or 
         $lowercaseLang = 'gre' or 
-        $lowercaseLang = 'el'">
+        $lowercaseLang = 'el' or 
+        $lowercaseLang = 'greek'">
         <xsl:element name="dc:language">
           <xsl:text>Greek, Modern (1453-)</xsl:text>
         </xsl:element>
@@ -195,10 +210,23 @@
           <xsl:text>Ancient Greek (to 1453)</xsl:text>
         </xsl:element>
       </xsl:when>
+      <xsl:when test="$lowercaseLang = 'dut' or
+        $lowercaseLang = 'nld' or
+        $lowercaseLang = 'nl'">
+        <xsl:element name="dc:language">
+          <xsl:text>Dutch</xsl:text>
+        </xsl:element>
+      </xsl:when>
       <xsl:when test="contains($lowercaseLang, 'qu') and 
         contains($lowercaseLang, 'ch')">
         <xsl:element name="dc:language">
           <xsl:text>Quechua</xsl:text>
+        </xsl:element>
+      </xsl:when>
+      <xsl:when test="$lowercaseLang = 'heb' or
+        $lowercaseLang = 'he'">
+        <xsl:element name="dc:language">
+          <xsl:text>Hebrew</xsl:text>
         </xsl:element>
       </xsl:when>
       <xsl:when test="$lowercaseLang = 'ltz' and
