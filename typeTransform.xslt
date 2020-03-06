@@ -103,6 +103,7 @@
         $lowercase = 'none' or
         contains($lowercase, 'gif') or
         contains($lowercase, 'mp3') or
+        contains($lowercase, 'mp4') or
         contains($lowercase, 'm4v') or
         contains($lowercase, 'wav') or
         contains($lowercase, 'boys in blue logan') or

@@ -21,7 +21,7 @@
     Creates the edm field for the Intermediate Provider for IDA. 
   -->
   <xsl:template match="dcterms:provenance[1]">
-    <xsl:variable name="lcProv" select="lower-case(.)"/>
+    <xsl:variable name="lcProv" select="lower-case(normalize-space(.))"/>
     <xsl:variable name="remUrl">
       <xsl:choose>
         <xsl:when test="contains($lcProv, 'http')">
