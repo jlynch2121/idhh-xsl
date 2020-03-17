@@ -131,7 +131,7 @@
         contains($lowercase, 'm4v') or
         contains($lowercase, 'wav') or
         contains($lowercase, 'boys in blue logan') or
-        $lowercase = 'ill.' or
+        contains($lowercase, 'ill.') or
         contains($lowercase, 'book viewer') or
         contains($lowercase, '8 bit') or
         contains($lowercase, 'scan') or
